@@ -1,0 +1,69 @@
+<ion-slides #mySlider [options]="mySlideOptions" (ionDidChange)="onSlideChanged()">
+  <ion-slide class="title">
+    <h1>Cordova - Ionic 2</h1>
+    <h2>Utilisation d'un framework Web Front multi-plateformes</h2>
+  </ion-slide>
+  <ion-slide class="summary">
+    <h1>Objectifs</h1>
+    <div class="slide-body">
+      <ul>
+        <li>Intégrer le concept d'application Web</li>
+        <li>Découvrir un framework d'application Cross-Platform</li>
+        <li>Pratiquer la programmation Typescript/ES6 dans le cadre applicatif</li>
+        <li>Styliser du contenu web pour une expérience applicative</li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="summary">
+    <h1>Sommaire</h1>
+    <div class="slide-body">
+      <ol>
+        <li>Pourquoi les Web Apps ?</li>
+        <li>Ionic</li>
+      </ol>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Pourquoi les Web Apps ?</h1>
+    <div class="slide-body">
+      <ul>
+        <li>2007: Apparition de l'iPhone
+            <ul>
+              <li>Début de l'explosion des applications mobiles/grand public</li>
+              <li>(Applications d'abord affichées via le navigateur mobile)</li>
+            </ul>
+        </li>
+        <li>L'applicatif: le nouvel eldorado (devant le Web)</li>
+        <li>Intéresse les développeurs Web</li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Pourquoi les Web Apps ?</h1>
+    <div class="slide-body">
+      <ul>
+        <li>2004-2006: Début de Youtube, Facebook, Twitter</li>
+        <li>Flash, premier plugin web pour l'interactif sur le web<br/>
+              => Création de HTML5 : premier pas vers les Web Apps
+        </li>
+      </ul>
+      <div class="column">
+        <img src="assets/facebook.jpg" alt="">
+        <img src="assets/twitter.jpg" alt="">
+        <img src="assets/youtube.png" alt="">
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Slide 3</h1>
+    <div class="slide-body">
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+  </ion-slide>
+</ion-slides>
+<input type="number" [(ngModel)]="pageNumber" (ngModelChange)="onPageNumberChanged()" name="pageNumber" class="page-number" min="1" max="{{maxPages}}">
