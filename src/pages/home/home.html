@@ -9,7 +9,7 @@
       <ul>
         <li>Intégrer le concept d'application Web</li>
         <li>Découvrir un framework d'application Cross-Platform</li>
-        <li>Pratiquer la programmation Typescript/ES6 dans le cadre applicatif</li>
+        <li>Pratiquer la programmation Typescript/ES-Next dans le cadre applicatif</li>
         <li>Styliser du contenu web pour une expérience applicative</li>
       </ul>
     </div>
@@ -18,13 +18,41 @@
     <h1>Sommaire</h1>
     <div class="slide-body">
       <ol>
-        <li>Pourquoi les Web Apps ?</li>
-        <li>Ionic</li>
+        <li><span (click)="goToSlide(3)">Présentation</span>
+          <ol>
+            <li (click)="goToSlide(4)">Qu'est-ce qu'Ionic/Cordova ?</li>
+            <li (click)="goToSlide(9)">Structure d'un projet</li>
+            <li (click)="goToSlide(11)">Environnement de développement</li>
+          </ol>
+        </li>
+          <li><span (click)="goToSlide(10)">Concepts</span>
+          <ol>
+            <li (click)="goToSlide(12)">Un Framework MVC</li>
+            <li (click)="goToSlide(13)">Utilisation de TypeScript/ES-Next</li>
+            <li (click)="goToSlide(14)">Les components</li>
+<!--            <li (click)="goToSlide(12)">Les routes</li>-->
+            <li (click)="goToSlide(21)">Le data-binding</li>
+            <li (click)="goToSlide(24)">L'injection de dépendances</li>
+            <li (click)="goToSlide(26)">Les services</li>
+            <li (click)="goToSlide(26)">Les directives</li>
+            <li (click)="goToSlide(26)">Les pipes</li>
+          </ol>
+        </li>
+        <li><span (click)="goToSlide(28)">Application</span>
+          <ol>
+            <li (click)="goToSlide(29)">Calcul moyenne</li>
+            <li (click)="goToSlide(30)">Blog</li>
+          </ol>
+        </li>
       </ol>
     </div>
   </ion-slide>
+  <ion-slide class="title">
+    <h1>Application</h1>
+  </ion-slide>
   <ion-slide class="standard">
-    <h1>Pourquoi les Web Apps ?</h1>
+    <h1>Présentation</h1>
+    <h2>Qu'est-ce qu'Ionic/Cordova ?</h2>
     <div class="slide-body">
       <ul>
         <li>2007: Apparition de l'iPhone
@@ -39,15 +67,18 @@
     </div>
   </ion-slide>
   <ion-slide class="standard">
-    <h1>Pourquoi les Web Apps ?</h1>
+    <h1>Présentation</h1>
+    <h2>Qu'est-ce qu'Ionic/Cordova ?</h2>
     <div class="slide-body">
-      <ul>
-        <li>2004-2006: Début de Youtube, Facebook, Twitter</li>
-        <li>Flash, premier plugin web pour l'interactif sur le web<br/>
-              => Création de HTML5 : premier pas vers les Web Apps
-        </li>
-      </ul>
       <div class="column">
+        <ul>
+          <li>2004-2006: Début de Youtube, Facebook, Twitter</li>
+          <li>Flash, premier plugin web pour l'interactif sur le web<br/>
+                => Création de HTML5 : premier pas vers les Web Apps
+          </li>
+        </ul>
+      </div>
+      <div class="column images">
         <img src="assets/facebook.jpg" alt="">
         <img src="assets/twitter.jpg" alt="">
         <img src="assets/youtube.png" alt="">
@@ -55,15 +86,579 @@
     </div>
   </ion-slide>
   <ion-slide class="standard">
-    <h1>Slide 3</h1>
+    <h1>Présentation</h1>
+    <h2>Qu'est-ce qu'Ionic/Cordova ?</h2>
     <div class="slide-body">
-      <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
+      <ul>
+        <li>2009: Invention de Angular par Brad Green et Shyam Seshadri (Google) <br/>
+             => né de la frustration de la complexité de construire une application complexe et dynamique en HTML/CSS/JS</li>
+        <li>Simplifier les gros projets d'applications Web</li>
+        <li>Site web : <a target="_blank" href="https://angular.io">https://angular.io</a> (Angular 2+)<br/>
+NB : (Version 1 : <a target="_blank" href="https://www.angularjs.org">https://www.angularjs.org</a>)</li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Présentation</h1>
+    <h2>Qu'est-ce qu'Ionic/Cordova ?</h2>
+    <div class="slide-body">
+      <ul>
+        <li>PhoneGap : Outil de création d'applications mobiles basé sur Angular</li>
+        <li>Racheté par Adobe en 2011 et transformé en deux projets :
+          <ul>
+            <li>Apache Cordova : Framework d'applications mobiles sous licence Open-Source Apache</li>
+            <li>Adobe PhoneGap : outils de développement Cordova, sous licence Adobe</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Présentation</h1>
+    <h2>Qu'est-ce qu'Ionic/Cordova ?</h2>
+    <div class="slide-body">
+      <ul>
+        <li>2013 : Création de Ionic, surcouche UI de Cordova</li>
+        <li>2016 : Ionic présente sa version 2, basé sur Angular 2</li>
+        <li>Site web : <a target="_blank" href="http://ionicframework.com/">http://ionicframework.com/</a> <br/>
+          <br/>
+          <span>NB : Angular 2 nécessite l'utilisation de langages plus avancés, comme <b>Javascript ES-Next</b> ou <b>TypeScript</b></span>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Présentation</h1>
+    <h2>Structure d'un projet</h2>
+    <div class="slide-body">
+      <div class="column">
+        <ul>
+          <li>Exemple de code HTML Ionic 2 :
+          <pre><code class="html hljs" style="font-size:2vh;">  &lt;ion-header&gt;
+    &lt;ion-navbar&gt;
+      &lt;ion-buttons start&gt;
+        &lt;button ion-button icon-only&gt;
+          &lt;ion-icon name="contact"&gt;&lt;/ion-icon&gt;
+        &lt;/button&gt;
+      &lt;/ion-buttons&gt;
+
+      &lt;ion-buttons end&gt;
+        &lt;button ion-button icon-only&gt;
+          &lt;ion-icon name="search"&gt;&lt;/ion-icon&gt;
+        &lt;/button&gt;
+      &lt;/ion-buttons&gt;
+    &lt;/ion-navbar&gt;
+  &lt;/ion-header&gt;
+
+  &lt;ion-list&gt;
+    &lt;ion-item&gt;
+      Left Icon Button
+      &lt;button ion-button outline item-right icon-left&gt;
+        &lt;ion-icon name="star"&gt;&lt;/ion-icon&gt;
+        Left Icon
+      &lt;/button&gt;
+    &lt;/ion-item&gt;
+  &lt;/ion-list&gt;</code></pre>
+          </li>
+        </ul>
+      </div>
+      <div class="column images">
+        <img class="img-fit" src="assets/ionic-layout.png" height="100%" alt="">
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Présentation</h1>
+    <h2>Structure d'un projet</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Espace de développement :
+          <ul>
+            <li><i>platforms</i>: Platform specific libraries and builds</li>
+            <li><i>plugins</i>: Plugins added to the project</li>
+            <li><i>resources</i>: icons and splashscreens integrated within the app</li>
+            <li><b><i>src</i>: Actual app code</b>
+              <ul>
+                <li><i>index.html</i>: base html ppage</li>
+                <li><i>theme</i>: CSS/SASS/LESS stylesheets
+                  <ul>
+                    <li><i>variable.scss</i></li>
+                  </ul>
+                </li>
+                <li><i>pages</i>: pages (if any) code</li>
+                <li><i>app</i>: app base code</li>
+                <li><i>assets</i>: medias used in the app</li>
+              </ul>
+            </li>
+            <li><i>www</i>: Web-based build</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Présentation</h1>
+    <h2>Environnement de développement</h2>
+    <div class="slide-body">
+     <div class="column">
+        <ul>
+          <li>installer nodejs au préalable : <a target="_blank" href="https://nodejs.org">https://nodejs.org</a></li>
+          <li>installer ionic:
+            <pre><code class="bash hljs">  npm install -g cordova ionic</code></pre>
+          </li>
+          <li>créer un projet (dans le dossier courant):
+            <pre><code class="bash hljs">  ionic start --v2 myApp blank
+  ionic start --v2 myApp tabs
+  ionic start --v2 myApp sidemenu</code></pre>
+          </li>
+          <li>créer un projet (dans le dossier courant):
+          <pre><code class="bash hljs">  ionic platform add ios 
+  # ou
+  ionic platform add android</code></pre>
+          </li>
+        </ul>
+      </div>
+     <div class="column">
+        <ul>
+          <li>lancer un mode de simulation web:
+            <pre><code class="bash hljs">  ionic serve</code></pre>
+          </li>
+          <li>lancer l'application sur un device:
+          <pre><code class="bash hljs">  ionic run ios 
+  # ou
+  ionic run android</code></pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide class="title">
+    <h1>Concepts</h1>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Un Framework MVC</h2>
+    <div class="slide-body slide-body-column">
+     <div class="row">
+        <ul>
+          <li>Le design pattern MVC : Séparation des données, des contrôles et de la vue
+            <ul>
+              <li>Données : infos de l’utilisateur, settings</li>
+              <li>Contrôles : actions programmées</li>
+              <li>Vue : UI</li>
+            </ul></li>
+        </ul>
+      </div>
+      <div class="row images">
+        <img class="img-fit" src="assets/MVC.png" alt="">
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Utilisation de TypeScript/ES-Next</h2>
+    <div class="slide-body">
+      <ul>
+        <li>TypeScript/ES-Next sont orientés Objet, contrairement à Javascript ES5</li>
+        <li>La différence entre TypeScript et JS ES-Next : le typage des variables</li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Utilisation de TypeScript/ES-Next</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Exemple: Création d'un prototype en ES5 :<br/>
+          <pre><code class="javascript hljs">var MonPrototype = function() &#123;
+  this.attribut = "valeur attribut";
+  
+  this.methode = function(parametre) &#123;
+    return "valeur retour";
+  &#125; 
+&#125;
+  // ou
+var MonPrototype = &#123;
+  attribut: "valeur attribut"
+&#125;
+
+MonPrototype.prototype = new Object();
+
+MonPrototype.prototype.fonction = function(parametre) &#123;
+  return "valeur retour";
+&#125;</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Utilisation de TypeScript/ES-Next</h2>
+    <div class="slide-body">
+      <ul>
+        <li>
+          Création d'une classe en ES-Next :<br/>
+          <pre><code class="javascript hljs">class Polygone &#123;
+  constructor(hauteur, largeur) &#123;
+    this.hauteur = hauteur;
+    this.largeur = largeur;
+  &#125;
+ 
+  get area() &#123;
+    return this.calcArea();
+  &#125;
+
+  calcArea() &#123;
+    return this.largeur * this.hauteur;
+  &#125;
+&#125;
+
+const carré = new Polygone(10, 10);</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Utilisation de TypeScript/ES-Next</h2>
+    <div class="slide-body">
+      <ul>
+        <li>
+          Création d'une classe en TypeScript :<br/>
+          <pre><code class="typescript hljs">class Greeter &#123;
+    greeting: string;
+    constructor(message: string) &#123;
+        this.greeting = message;
+    &#125;
+    greet() &#123;
+        return "Hello, " + this.greeting;
+    &#125;
+&#125;
+
+let greeter = new Greeter("world");</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les components</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Composant HTML définit par :
+          <ul>
+            <li>Un template HTML</li>
+            <li>Un contrôleur JS</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les components</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Exemple :
+          <pre><code class="typescript hljs" ngNonBindable>import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'my-component',
+  template: '&lt;div&gt;Hello my name is &#123;&#123;name&#125;&#125;.
+    &lt;button (click)="sayMyName()"&gt;Say my name&lt;/button&gt;&lt;/div&gt;'
+&#125;)
+export class MyComponent &#123;
+  constructor() &#123;
+    this.name = 'Max'
+  &#125;
+  sayMyName() &#123;
+    console.log('My name is', this.name)
+  &#125;
+&#125;</code></pre>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les components</h2>
+    <div class="slide-body">
+     
+      <div class="column">
+        <ul>
+          <li>Cet élément peut être appelé en HTML comme suit :
+            <pre><code class="html hljs" ngNonBindable>  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+   ...
+  &lt;body&gt;
+   ...
+    &lt;my-component&gt;&lt;my-component&gt;
+   ...
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>Ou dans un autre Component :
+            <pre><code class="html hljs" ngNonBindable>  &lt;div&gt;
+   ...
+    &lt;my-component&gt;&lt;my-component&gt;
+   ...
+  &lt;/div&gt;</code></pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-slide>
+<!--
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les routes</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Elles permettent de naviguer dans l'application et de garder l'historique des pages</li>
+        <li>On les intègre dans le fichier <i>app.module.ts</i> :
+          <pre><code class="typescript hljs" style="font-size:2vh;" ngNonBindable>import &#123; NgModule &#125;             from '@angular/core';
+...
+import &#123; RouterModule, Routes &#125; from '@angular/router';
+
+import &#123; AppComponent &#125;          from './app.component';
+import &#123; FirstComponent &#125;   from './first.component';
+import &#123; SecondComponent &#125;     from './second.component';
+
+const appRoutes: Routes = [
+&#123; path: 'first', component: FirstComponent &#125;,
+&#123; path: 'second', component: SecondComponent &#125;,
+];
+
+@NgModule(&#123;
+imports: [
+  ...
+  RouterModule.forRoot(appRoutes)
+],
+...
+bootstrap: [ AppComponent ]
+&#125;)
+export class AppModule &#123; &#125;</code></pre>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les routes</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Le Component donné par la route sera ajouté dans le <i>router-outlet</i></li>
+        <li>On peut faire appel à ces routes via l'attribut <i>routerLink</i> :
+          <pre><code class="hljs typescript" style="font-size:2vh;" ngNonBindable>import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'my-app',
+  template: `
+    &lt;h1&gt;Angular Router&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a routerLink="/first" routerLinkActive="active"&gt;First&lt;/a&gt;
+      &lt;a routerLink="/second" routerLinkActive="active"&gt;Second&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  `
+&#125;)
+export class AppComponent &#123; &#125;</code></pre>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+-->
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Le data-binding</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Le data-binding permet de lier une variable HTML à une variable JavaScript/TypeScript</li>
+        <li>Cette variable est donc accessible sur les deux langages, et peut être mis à jour d'un langage vers l'autre</li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Le data-binding</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Il existent différentes méthodes :
+          <ul>
+            <li>Intégration d'une variable JS dans du texte HTML :
+            <pre><code class="html hljs" style="font-size:2vh;" ngNonBindable>&lt;div&gt;&#123;&#123;variable&#125;&#125;&lt;/div&gt;</code></pre>
+            </li>
+            <li>Exposition d'une variable à un Component :
+            <pre><code class="html hljs" style="font-size:2vh;" ngNonBindable>&lt;my-component [variableducomponent]="variableexterieure"&gt;&lt;/my-component&gt;</code></pre></li>
+            <li>Exposition d'un event d'un Component à une expression/fonction :
+            <pre><code class="html hljs" style="font-size:2vh;" ngNonBindable>&lt;my-component (evenement)="action()"&gt;&lt;/my-component&gt;</code></pre></li>
+            <li>Binding dans les deux sens (principalement réservé à NgModel) :
+            <pre><code class="html hljs" style="font-size:2vh;" ngNonBindable>&lt;my-component [(directive)]="variable"&gt;&lt;/my-component&gt;</code></pre></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Le data-binding</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Pour accéder à une variable d'un Component, celle-ci doit être exposée grâce au décorateur <i>@Input</i>
+        <pre><code class="typescript hljs" style="font-size:2vh;" ngNonBindable>import &#123; Component, Input &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'user-profile',
+  template: '&lt;div&gt;&#123;&#123;user.name&#125;&#125;&lt;/div&gt;'
+&#125;)
+export class UserProfile &#123;
+  @Input() user;
+  constructor() &#123;&#125;
+&#125;</code></pre>
+       <pre><code class="html hljs" style="font-size:2vh;" ngNonBindable>&lt;user-profile [user]="currentUser"&gt;&lt;/user-profile&gt;&lt;/code&gt;&lt;/pre&gt;</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>L'injection de dépendances</h2>
+    <div class="slide-body">
+      <ul>
+        <li>L'injection de dépendances consiste à pouvoir exposer un code d'un fichier/module à un autre.<br/>
+        ES6 permet de faire ceci très simplement grâce aux instructions <i>import</i> (et <i>export</i>)
+        <pre><code class="typescript hljs" ngNonBindable>import &#123; Component &#125; from '@angular/core';
+import &#123; AppComponent &#125; from './app.component';
+import * from './index';</code></pre>
+        NB: vous remarquerez que vous pouvez choisir les éléments à importer, en provenance du module concerné.
+        </li>
+        <li> Pour pouvoir importer une classe d'un fichier, il faut que cette classe soit exportable :
+       <pre><code class="typescript hljs" ngNonBindable>export class AppComponent &#123;&#125;      // Cette classe est importable via 'import'</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>L'injection de dépendances</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Angular 2 vous simplifie grandement la tâche d'injection de dépendances, mais il faut quand même notifier le module de l'application de l'existence vos classes :
+        <pre><code class="typescript hljs" style="font-size:1.75vh;" ngNonBindable>import &#123; NgModule, ErrorHandler &#125; from '@angular/core';
+import &#123; IonicApp, IonicModule, IonicErrorHandler &#125; from 'ionic-angular';
+import &#123; MyApp &#125; from './app.component';
+import &#123; HomePage &#125; from '../pages/home/home';
+import &#123; MyService &#125; from '../services/my-service.service';
+
+@NgModule(&#123;
+  declarations: [
+    MyApp,                                                          // Composants Web utilisés dans l'application
+    HomePage                                                        // Composants Web utilisés dans l'application
+  ],
+  imports: [
+    IonicModule.forRoot(MyApp)                                      // Modules supplémentaires (ici Ionic)
+  ],
+  bootstrap: [IonicApp],                                            // Composant de démarrage de l'application (ici l'application Ionic)
+  entryComponents: [
+    MyApp,                                                          // Composants Web utilisés comme pages
+    HomePage                                                        // Composants Web utilisés comme pages
+  ],
+  providers: [
+    &#123;provide: ErrorHandler, useClass: IonicErrorHandler&#125;,           // Les services de l'application
+    MyService                                                       // Les services de l'application
+  ]
+&#125;)
+export class AppModule &#123;&#125;
+</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les services</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Pour permettre d'avoir des méthodes communes à l'application, vous pouvez créer des services :
+        <pre><code class="typescript hljs" ngNonBindable>import &#123; Injectable &#125; from '@angular/core';
+
+@Injectable()                        // Un service doit être 'Injectable'
+export class AuthService &#123;
+  login() &#123;
+  &#125;
+  
+  logout() &#123;
+  &#125;
+&#125;
+</code></pre>
+       NB : Un service est un singleton (= Une seule instance dans toute l'application).
+       </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les services</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Une fois ajouté à l'application, vous pouvez utiliser le service où bon vous semble.
+        <pre><code class="typescript hljs" ngNonBindable>import &#123; Component &#125; from '@angular/core';
+import &#123; AuthService &#125; from '../services/auth.service';
+
+@Component(&#123;
+  selector: 'user-profile',
+  template: '&lt;div&gt;&#123;&#123;user.name&#125;&#125;&lt;/div&gt;'
+&#125;)
+export class UserProfile &#123;
+  @Input() user;
+  constructor(authService : AuthService) &#123;
+    this._authService = authService;
+  &#125;
+&#125;
+</code></pre></li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="title">
+    <h1>Présentation</h1>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Application</h1>
+    <h2>Calcul moyenne</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Codez un système pour calculer la moyenne des élèves d’une classe.</li>
+        <li>Indications :
+        <ul>
+          <li>Les noms des élèves peuvent être stockés en JS.</li>
+          <li>Les champs des notes doivent être modifiables.</li>
+        <li>Le tableau de note doit donner la moyenne de chaque élève, ainsi que la moyenne générale de la classe.</li>
+        </ul>  
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Application</h1>
+    <h2>Blog</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Programmez un blog dynamique (pas de rafraîchissement de
+page).</li>
+        <li>Indications :
+        <ol>
+          <li>Intégrez une barre de navigation qui changent lorsque
+            l’utilisateur est connecté.</li>
+          <li>Affichez la liste des articles avec une pagination.</li>
+          <li>Permettez le déplacement d’une page d’articles à l’autre sans
+            rechargement de la page.</li>
+          <li>Mémorisez en local si l’utilisateur est connecté ou non (pour
+            qu’il puisse recharger la page et rester connecté).</li>
+        </ol>  
+        </li>
+      </ul>
     </div>
   </ion-slide>
 </ion-slides>
+<template [ngIf]="pageNumber>3">
+  <button (click)="goToSlide(2)" class="back-to-top"><ion-icon name="return-left"></ion-icon></button>
+</template>
 <input type="number" [(ngModel)]="pageNumber" (ngModelChange)="onPageNumberChanged()" name="pageNumber" class="page-number" min="1" max="{{maxPages}}">

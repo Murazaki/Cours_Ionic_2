@@ -19,6 +19,10 @@ export class HomePage {
   pageNumber = 1;
   maxPages;
    
+  goToSlide(index) {
+   this.slider.slideTo(index);
+  }
+   
   onSlideChanged() {
     this.pageNumber = this.slider.getActiveIndex() + 1;
     this.maxPages = this.slider.length();

@@ -5,17 +5,17 @@ import { HomePage } from '../pages/home/home';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp,                                                          // Composants Web utilisés dans l'application
+    HomePage                                                        // Composants Web utilisés dans l'application
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp)                                      // Modules supplémentaires (ici Ionic)
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [IonicApp],                                            // Composant de démarrage de l'application (ici l'application Ionic)
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp,                                                          // Composants Web utilisés comme pages
+    HomePage                                                        // Composants Web utilisés comme pages
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}] // Les services de l'application
 })
 export class AppModule {}
