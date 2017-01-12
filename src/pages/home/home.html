@@ -617,8 +617,111 @@ export class UserProfile &#123;
       </ul>
     </div>
   </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les directives</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Ce sont les éléments que l'ont peut appeler du code HTML</li>
+        <li>Il en existe trois types :
+          <ul>
+            <li>Les Components : des directives avec un template HTML</li>
+            <li>Les Directives Structurelles : des directives qui permettent de modifier le document HTML (DOM)</li>
+            <li>Les Directives Atrributs : des directives qui permettent de changer l'apparence ou le comportement d'un élément</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les directives</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Les directives structurelles :</li>
+        <li>Les plus communes sont
+          <ul>
+            <li>ngIf : équivalent de if en JS</li>
+            <li>ngFor : équivalent de for en JS</li>
+            <li>ngSwitch : équivalent de switch en JS</li>
+          </ul>
+        </li>
+        <li>Vous pouvez aussi créer les votres.</li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les directives</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Cas d'utilisation de directives structurelles :
+          <pre><code class="html hljs" ngNonBindable>&lt;p *ngIf="condition"&gt;
+  S'affiche si la condition est vraie.
+&lt;/p&gt;
+&lt;p *ngIf="!condition"&gt;
+  S'affiche si la condition est fausse.
+&lt;/p>&gt;
+</code></pre>
+        </li>
+        <li>Ceci donnera, si "condition" est vraie :
+          <pre><code class="html hljs" ngNonBindable>&lt;p&gt;
+  S'affiche si la condition est vraie.
+&lt;/p&gt;
+</code></pre>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les directives</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Lorsque le bloc de code HTML n'est pas délimité par une balise, on peut utiliser le bloc <i>template</i> :
+          <pre><code class="html hljs" ngNonBindable>&lt;template [ngIf]="condition"&gt;
+  &lt;p&gt;
+    S'affiche si la condition est vraie.
+  &lt;/p&gt;
+&lt;/template&gt;
+</code></pre>
+        </li>
+        <li>Ce qui donnera, si "condition" est vraie :
+          <pre><code class="html hljs" ngNonBindable>&lt;p&gt;
+  S'affiche si la condition est vraie.
+&lt;/p&gt;
+</code></pre>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
+  <ion-slide class="standard">
+    <h1>Concepts</h1>
+    <h2>Les directives</h2>
+    <div class="slide-body">
+      <ul>
+        <li>Une directive attribut, par exemple nommée <i>myHighlight</i>, peut s'utiliser ainsi :
+          <pre><code class="html hljs" ngNonBindable>&lt;div myHighlight&gt;Highlighted text&lt;/div&gt;</code></pre>
+        </li>
+        <li>Celle-ci peut être définie comme ceci :
+          <pre><code class="typescript hljs" ngNonBindable>import &#123; Directive, ElementRef, Input &#125; from '@angular/core';
+          
+@Directive(&#123; selector: '[myHighlight]' &#125;)
+export class HighlightDirective &#123;
+    constructor(el: ElementRef) &#123; // on récupère la référence à l'élément HTML
+                                  // dans lequel la directive est appelée
+       // on peut faire des modifications sur cet élément ainsi
+       // (ici on change sa couleur de fond pour du jaune)
+       el.nativeElement.style.backgroundColor = 'yellow';
+    &#125;
+&#125;
+</code></pre>
+        </li>
+      </ul>
+    </div>
+  </ion-slide>
   <ion-slide class="title">
-    <h1>Présentation</h1>
+    <h1>Application</h1>
   </ion-slide>
   <ion-slide class="standard">
     <h1>Application</h1>
