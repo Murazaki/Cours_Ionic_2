@@ -34,14 +34,13 @@
             <li (click)="goToSlide(21)">Le data-binding</li>
             <li (click)="goToSlide(24)">L'injection de dépendances</li>
             <li (click)="goToSlide(26)">Les services</li>
-            <li (click)="goToSlide(26)">Les directives</li>
-            <li (click)="goToSlide(26)">Les pipes</li>
+            <li (click)="goToSlide(28)">Les directives</li>
           </ol>
         </li>
-        <li><span (click)="goToSlide(28)">Application</span>
+        <li><span (click)="goToSlide(33)">Application</span>
           <ol>
-            <li (click)="goToSlide(29)">Calcul moyenne</li>
-            <li (click)="goToSlide(30)">Blog</li>
+            <li (click)="goToSlide(34)">Calcul moyenne</li>
+            <li (click)="goToSlide(35)">Blog</li>
           </ol>
         </li>
       </ol>
@@ -748,8 +747,8 @@ export class HighlightDirective &#123;
 page).</li>
         <li>Indications :
         <ol>
-          <li>Intégrez une barre de navigation qui changent lorsque
-            l’utilisateur est connecté.</li>
+          <li>Intégrez une page de login qui affiche "Bonjour <i>pseudo</i>" lorsque
+            l’utilisateur s'est connecté.</li>
           <li>Affichez la liste des articles avec une pagination.</li>
           <li>Permettez le déplacement d’une page d’articles à l’autre sans
             rechargement de la page.</li>
@@ -759,6 +758,13 @@ page).</li>
         </li>
       </ul>
     </div>
+  </ion-slide>
+  <ion-slide class="title">
+      <h2>Merci de votre attention !<br/>
+      Pour approfondir vos connaissances :<br/>
+      <a href="https://www.ionicframework.com/docs/">Documentation d'Ionic Framework</a><br/>
+      <a href="https://angular.io/docs/ts/latest/">Documentation d'Angular</a><br/>
+      <a href="https://learnangular2.com">Learn Angular 2</a></h2>
   </ion-slide>
 </ion-slides>
 <template [ngIf]="pageNumber>3">
